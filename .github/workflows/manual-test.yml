@@ -19,6 +19,11 @@ jobs:
     runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v3
+      # Custom desires now:
+      - uses: denoland/setup-deno@v1.1.2
+        with:
+          deno-version: v1.x
+      #
       - uses: ./
         with:
           limit-access-to-actor: ${{ matrix.limit-access-to-actor }}
